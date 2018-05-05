@@ -7,7 +7,6 @@
 
 # Useful Links
 
-> These links are organized per video.
 
 What is webpack
   - [Webpack 2 Official Site](https://webpack.js.org/)
