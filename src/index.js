@@ -2,6 +2,7 @@ import './css/main.css';
 import './scss/main.scss';
 import {hello, sup} from './js/module';
 import {welcome}from './js/welcome';
+import './js/about';
 
 console.log("Webpack 2");
 hello();
