@@ -1,11 +1,15 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry:{
+        app: './src/index.js',
+        about: './src/js/about.js', 
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname,'dist'),
     },
     devtool:'inline-source-map',
@@ -37,6 +41,11 @@ module.exports = {
         ]
     },
     plugins: [
-      new ExtractTextPlugin("styles.css"),
+        new CleanWebpackPlugin(['dist']),  // telling which folder to delete 
+      new ExtractTextPlugin("styles.css"), // specifying the file name seperatly for css
+      new HtmlWebpackPlugin({
+          title:'Learning Webpack 2'
+      }) // creating index.html automatically while npm run build
+
     ]
 }
